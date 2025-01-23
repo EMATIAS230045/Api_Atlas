@@ -7,5 +7,8 @@ customersDAO.getAll=async()=>{
     return await customers.find();
 }
 
+customersDAO.getOne=async()=>{
+    return await customers.findOne({customer_client:customer_client})
+}
 
 export default customersDAO;
