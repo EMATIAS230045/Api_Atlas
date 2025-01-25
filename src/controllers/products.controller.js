@@ -41,9 +41,9 @@ productsController.getOne=(req,res)=>
         })
     })
 }
-productsController.insert=(res, req)=>{
+productsController.insert=(req, res)=> {
     productsDAO.insert(req.body)
-    .then((response)=>{
+    .then((response)=> {
         res.json({
             data:{
                 message: "iInsercion suceessful",
@@ -59,6 +59,40 @@ productsController.insert=(res, req)=>{
         })
     })
 }
+productsController.updateOne=(req,res)=>{
+    productsDAO.updateOne(req.body,req.params.barcode)
+    .then((result)=>{
+        res.json({
+        data:{
+            menssage:"Product update sucessfully",
+            result:result
+        }
 
+        })
+    })
+    .catch((erooor)=>{
+        res.json({
+            data:{error:error}
+        })
+       }) 
+}
+productsController.deleteOne=(req, res) =>{
+   productsDAO.deleteOne(req.params.barcode)
+   .then((productDeleted)=>{
+    res.json({
+        data:{
+            menssage:"Product deleste sucessfully",
+            productDeleted:productDeleted
+        }
+    })
+   })
+   .catch((productDeleted)=>{
+    res.json({
+        data:{
+            error:productDeleted
+        }
+    })    
+   }) 
+}
 
 export default productsController;

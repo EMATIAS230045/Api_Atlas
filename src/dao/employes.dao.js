@@ -9,5 +9,11 @@ empleyesDAO.getAll=async()=>{
 empleyesDAO.getOne=async(empleyes_number)=>{
     return await empleyes.findOne({empleyes_number:empleyes_number});
 }
+empleyesDAO.updateOne=async(empleyes_number)=>{
+    return await empleyes.findOneAndUpdate({empleyes_number:empleyes_number})
+}
+empleyesDAO.deleteOne=async(empleyes, empleyes_number)=>{
+    return await empleyes.findOneAndDelete({empleyes_number:empleyes_number})
+}
 
 export default empleyesDAO;
