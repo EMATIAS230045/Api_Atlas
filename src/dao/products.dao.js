@@ -9,7 +9,7 @@ productsDAO.getAll=async()=>{
 productsDAO.getOne=async(barcode)=>{
     return await Product.findOne({barcode:barcode})
 }
-productsDAO.insert=async(product)=> {
+productsDAO.insert = async(product)=> {
     return await Product.create(product);
 }
 productsDAO.deleteOne=async(barcode)=>{
