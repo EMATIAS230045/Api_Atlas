@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Groceries</title>
+</head>
+<body>
+    <div data-role="page" id="products">
+        <div data-role="header" style="overflow:hidden;">
+            <h1>Abarrotes App</h1>
+            <a href="#" data-icon="gear" class="ui-btn-right">Opciones</a>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#employees">Empleados</a></li>
+                    <li><a href="#customers">Clientes</a></li>
+                </ul>
+            </div>
+        </div>
+
+	    <div role="main" class="ui-content">
+            <form action="/groceries/products/insert" method="POST">
+                <div class="card">
+                    <div class="card-body">
+                        <label for="barcode">Código de Barras</label>
+                        <input type="text" name="barcode" id="barcode">
+                        
+                        <label for="description">Descripción</label>
+                        <input type="text" name="description" id="description">
+
+                        <label for="brand">Marca</label>
+                        <input type="text" name="brand" id="brand">
+
+                        <label for="price">Precio de Venta</label>
+                        <input type="number" name="price" id="price">
+
+                        <label for="cost">Precio de Compra</label>
+                        <input type="number" name="cost" id="cost">
+
+                        <label for="expired_date">Fecha de Caducidad</label>
+                        <input type="date" name="expired_date" id="expired_date">
+
+                        <label for="stock">Existencias</label>
+                        <input type="number" name="stock" id="stock">
+
+                        <button class="ui-btn ui-shadow">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+	    <div data-role="footer">
+
+        </div>
+    </div>
+</body>
+</html>
