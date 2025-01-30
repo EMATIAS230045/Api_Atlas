@@ -9,9 +9,10 @@ productsController.getAll = (req,res)=>{
     //?Aqui se piden los productos al DAO
     productsDAO.getAll()
     .then((products)=>{
-        res.json({
-            data: products
-        })
+         res.json({
+             data: products
+         })
+    // res.render('../src/views/index.ejs')
     })
     .catch((error)=>{
         res.json({
@@ -44,12 +45,13 @@ productsController.getOne=(req,res)=>
 productsController.insert=(req, res)=> {
     productsDAO.insert(req.body)
     .then((response)=> {
-        res.json({
-            data:{
-                message: "iInsercion suceessful",
-                product:response 
-            }
-        })
+        // res.json({
+        //     data:{
+        //         message: "iInsercion suceessful",
+        //         product:response 
+        //     }
+        // })
+        res.redirect('/groceries/products/getAll')
     })
     .catch((error)=>{
         res.json({
