@@ -4,10 +4,12 @@ import morgan from "morgan";
 import productsRouter from './routers/products.routes.js'
 import empleyesRouter from "./routers/employes.routes.js";
 import customersRouter from "./routers/customers.routes.js"
+import ejs from "ejs";
 const app = express();
 
 //? Settings
 app.set('port',process.env.PORT || 3000);  //? si el puerto no esta en las variables de entorno se le asignara uno por default
+app.set("view engine", ejs)
 
 //?Middlewares
 app.use(morgan('dev'));
