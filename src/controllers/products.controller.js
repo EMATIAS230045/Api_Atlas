@@ -9,10 +9,10 @@ productsController.getAll = (req,res)=>{
     //?Aqui se piden los productos al DAO
     productsDAO.getAll()
     .then((products)=>{
-         res.json({
-             data: products
-         })
-    // res.render('../src/views/index.ejs')
+        //  res.json({
+        //      data: products
+        //  })
+     res.render('../src/views/index.ejs')
     })
     .catch((error)=>{
         res.json({
